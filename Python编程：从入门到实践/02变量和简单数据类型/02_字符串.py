@@ -29,3 +29,12 @@ url = "hello,world!"
 print(url.removeprefix("hello,")) # World!
 
 # 如何在使⽤字符串时避免语法错误
+# 单引号和双引号的正确使用
+# 语法错误也是最不具体的错误类型，因此可能难以找出并修复
+message = "One of Python's strengths is its diverse community."
+print(message)
+
+# error grammer : message = 'One of Python's strengths is its diverse community.'
+
+
+
