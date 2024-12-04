@@ -45,3 +45,50 @@ new_person = 'Mike'
 invite_message = ", ".join(invite_person) # ", "来分隔元素
 print(f"{invite_message} will be invite to attend our party.")
 
+# 练习 3.6：添加嘉宾 你刚找到了⼀张更⼤的餐桌，可容纳更多的嘉宾
+# 就座。请想想你还想邀请哪三位嘉宾。
+# 以完成练习 3.4 或练习 3.5 时编写的程序为基础，在程序末尾添加函数
+# 调⽤ print()，指出你找到了⼀张更⼤的餐桌。
+# 使⽤ insert() 将⼀位新嘉宾添加到名单开头。
+# 使⽤ insert() 将另⼀位新嘉宾添加到名单中间。
+# 使⽤ append() 将最后⼀位新嘉宾添加到名单末尾。
+# 打印⼀系列消息，向名单中的每位嘉宾发出邀请。
+
+new_man = ['Mike','Marry','Tom']
+invite_person.insert(0,new_man[0])
+invite_person.insert(3,new_man[1])
+invite_person.append(new_man[2])
+invite_message = ", ".join(invite_person)
+print(f"{invite_message} will be invite to attend our party.")
+
+# 练习 3.7：缩短名单 你刚得知新购买的餐桌⽆法及时送达，因此只能
+# 邀请两位嘉宾。
+# 以完成练习 3.6 时编写的程序为基础，在程序末尾添加⼀⾏代码，
+# 打印⼀条你只能邀请两位嘉宾共进晚餐的消息。
+# 使⽤ pop() 不断地删除名单中的嘉宾，直到只有两位嘉宾为⽌。
+# 每次从名单中弹出⼀位嘉宾时，都打印⼀条消息，让该嘉宾知道
+# 你很抱歉，⽆法邀请他来共进晚餐。
+# 对于余下两位嘉宾中的每⼀位，都打印⼀条消息，指出他依然在
+# 受邀之列。
+# 使⽤ del 将最后两位嘉宾从名单中删除，让名单变成空的。打印
+# 该名单，核实名单在程序结束时确实是空的
+
+print(f"{invite_message}, Sorry, I can just invite two person.")
+run_man = invite_person.pop()
+print(f"Sorry,{run_man},You can not attend my party.")
+run_man = invite_person.pop()
+print(f"Sorry,{run_man},You can not attend my party.")
+run_man = invite_person.pop()
+print(f"Sorry,{run_man},You can not attend my party.")
+run_man = invite_person.pop()
+print(f"Sorry,{run_man},You can not attend my party.")
+print(invite_person)
+new_invite_messgae = ", ".join(invite_person)
+print(f"{invite_person[0]},You can attend the party")
+print(f"{invite_person[1]},You can attend the party")
+del invite_person[0] # del一次只能删除一个元素
+del invite_person[0]
+print(invite_person)
+
+
+

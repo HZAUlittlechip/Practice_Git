@@ -68,7 +68,7 @@ my_list = [10, 20, 30, 40, 50]
 element = 30
 
 # 获取元素在列表中的索引
-index = my_list.index(element) #list.index 返还的是第一个搜索到的元素
+index = my_list.index(element) #.index 返还的是第一个搜索到的元素
 
 print(f"元素 {element} 在列表中的位置是：{index}")
 
