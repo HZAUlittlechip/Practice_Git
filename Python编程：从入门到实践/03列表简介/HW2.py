@@ -41,7 +41,7 @@ new_person = 'Mike'
      # invite_person.append(new_person) 不会返还最后生成的数列，而是返还None
 
      # print(f"{invite_person[0,1,2]} will be invite to attend our party.")
-     # 可以用join()将数列中元素连接合并成为一个字符串 ！
+     # 可以用join()将数列中元素连接合并成为一个字符串 ！ 且join只用于字符串的合并
 invite_message = ", ".join(invite_person) # ", "来分隔元素
 print(f"{invite_message} will be invite to attend our party.")
 

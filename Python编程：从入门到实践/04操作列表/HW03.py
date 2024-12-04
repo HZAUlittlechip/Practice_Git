@@ -57,4 +57,17 @@ for value in range(1,11):
 
 # 练习 4.9：⽴⽅推导式 使⽤列表推导式⽣成⼀个列表，其中包含前 10
 # 个整数的⽴⽅。
-lifang_numbers = list(value**3 for value in range(2,11))
+lifang_numbers = list(value**3 for value in range(1,11))
+
+# 练习 4.10：切⽚ 选择你在本章编写的⼀个程序，在末尾添加⼏⾏代
+# 码，以完成如下任务。
+test_list = lifang_numbers[:]
+
+# 打印消息“The first three items in the list are:”，再使⽤切⽚来打印列
+# 表的前三个元素。
+print(f"The first three items in the list are: "
+      f"{", ".join(map(str,test_list[0:3]))}") # map(str, )将整数类型的数列变为字符串的类型才能用join函数
+
+# 000000000
+# 打印消息“Three items from the middle of the list are:”，再使⽤切⽚
+# 来打印列表中间的三个元素。
