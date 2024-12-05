@@ -68,6 +68,40 @@ test_list = lifang_numbers[:]
 print(f"The first three items in the list are: "
       f"{", ".join(map(str,test_list[0:3]))}") # map(str, )将整数类型的数列变为字符串的类型才能用join函数
 
-# 000000000
 # 打印消息“Three items from the middle of the list are:”，再使⽤切⽚
 # 来打印列表中间的三个元素。
+print(f"Three items from the middle of the list are: "
+      f"{", ".join(map(str,test_list[3:6]))}")
+
+# 打印消息“The last three items in the list are:”，再使⽤切⽚来打印列
+# 表末尾的三个元素。
+print(f"Three items from the middle of the list are: "
+      f"{", ".join(map(str,test_list[-3:]))}")
+
+# 练习 4.11：你的⽐萨，我的⽐萨 在你为练习 4.1 编写的程序中，创建
+# ⽐萨列表的副本，并将其赋给变量 friend_pizzas，再完成如下任
+# 务
+friend_pizzas = pizzas[:]
+print(friend_pizzas)
+
+# 在原来的⽐萨列表中添加⼀种⽐萨
+# 在列表 friend_pizzas 中添加另⼀种⽐萨。
+pizzas.append('fourth')     # insert()函数也可以插入元素
+friend_pizzas.append('4')
+
+# 核实有两个不同的列表。为此，打印消息“My favorite pizzas
+# are:”，再使⽤⼀个 for 循环来打印第⼀个列表；打印消息“My
+# friend's favorite pizzas are:”，再使⽤⼀个 for 循环来打印第⼆个列
+# 表。核实新增的⽐萨被添加到了正确的列表中。
+print("my favorite pizzas are:")
+for my_pizza in pizzas:
+   print(my_pizza)
+
+print("my friend favorite pizzas are:")
+for friend_pizza in friend_pizzas:
+   print(friend_pizza)
+
+# 练习 4.12：使⽤多个循环 在本节中，为节省篇幅，程序 foods.py 的
+# 每个版本都没有使⽤ for 循环来打印列表。请选择⼀个版本的
+# foods.py，在其中编写两个 for 循环，将各个⾷品列表都打印出来。
+  # ******* 有点无聊不打了 ************
