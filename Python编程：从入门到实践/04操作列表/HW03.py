@@ -66,7 +66,9 @@ test_list = lifang_numbers[:]
 # 打印消息“The first three items in the list are:”，再使⽤切⽚来打印列
 # 表的前三个元素。
 print(f"The first three items in the list are: "
-      f"{", ".join(map(str,test_list[0:3]))}") # map(str, )将整数类型的数列变为字符串的类型才能用join函数
+      f"{", ".join(map(str,test_list[0:3]))}")
+# map(str, )将整数类型的数列变为字
+# 符串的类型才能用join函数
 
 # 打印消息“Three items from the middle of the list are:”，再使⽤切⽚
 # 来打印列表中间的三个元素。
@@ -104,4 +106,23 @@ for friend_pizza in friend_pizzas:
 # 练习 4.12：使⽤多个循环 在本节中，为节省篇幅，程序 foods.py 的
 # 每个版本都没有使⽤ for 循环来打印列表。请选择⼀个版本的
 # foods.py，在其中编写两个 for 循环，将各个⾷品列表都打印出来。
-  # ******* 有点无聊不打了 ************
+   #  ******* 有点无聊不打了 ************
+
+# 练习 4.13：⾃助餐 有⼀家⾃助式餐馆，只提供 5 种简单的⾷品。请
+# 想出 5 种简单的⾷品，并将其存储在⼀个元组中。
+foods = ('food1', 'food2','food3', 'food4', 'food5')
+
+# 使⽤⼀个 for 循环将该餐馆提供的 5 种⾷品都打印出来。
+for food in foods:
+   print(food)
+
+# 尝试修改其中的⼀个元素，核实 Python 确实会拒绝你这样做
+   # foods[3] = 'fine'
+
+# 餐馆调整菜单，替换了两种⾷品。请编写⼀⾏给元组变量赋值的
+# 代码，并使⽤⼀个 for 循环将新元组的每个元素都打印出来。
+foods = ('food1', 'food2','food3', 'food6', 'food7')
+for food in foods:
+   print(food)
+
+
