@@ -1,7 +1,6 @@
 # 练习 6.1：⼈ 使⽤⼀个字典来存储⼀个⼈的信息，包括名、姓、年龄
 # 和居住的城市。该字典应包含键 first_name、last_name、age 和
 # city。将存储在该字典中的每项信息都打印出来
-from time import process_time_ns
 
 myself = {'first_name': 'Liu', 'last_name': 'zihuan','age': 23,'city':'WuHan'}
 print(myself)
@@ -97,3 +96,65 @@ for invite_person in invite_persons:
 		print(f"{invite_person}感谢你的调查")
 	else:
 		print(f"{invite_person}请你参加我们的调查")
+
+# 练习 6.7：⼈们 在为练习 6.1 编写的程序中，再创建两个表⽰⼈的字
+# 典，然后将这三个字典都存储在⼀个名为 people 的列表中。遍历这
+# 个列表，将其中每个⼈的所有信息都打印出来。
+myself = {'first_name': 'Liu', 'last_name': 'zihuan','age': 23,'city':'WuHan'}
+xiaomi = {'first_name': 'Mi', 'last_name': 'guiyin','age': 25,'city':'Rizhao'}
+xiaoning = {'first_name': 'Lv', 'last_name': 'jinning','age': 25,'city':'GanZhou'}
+
+peoples = [myself, xiaomi, xiaoning]
+
+for people in peoples:
+	name = f'{people['first_name']} {people['last_name']}'
+	age = people['age']
+	city = people['city']
+
+	print(f'姓名：{name}, 年龄：{age},居住城市：{city}')
+
+# 练习 6.8：宠物 创建多个表⽰宠物的字典，每个字典都包含宠物的类
+# 型及其主⼈的名字。将这些字典存储在⼀个名为 pets 的列表中，再
+# 遍历该列表，并将有关每个宠物的所有信息打印出来。
+# ********* 同上 **********
+
+# 练习 6.9：喜欢的地⽅ 创建⼀个名为 favorite_places 的字典。
+# 在这个字典中，将三个⼈的名字⽤作键，并存储每个⼈喜欢的 1〜3 个
+# 地⽅。为让这个练习更有趣些，让⼀些朋友说出他们喜欢的⼏个地
+# ⽅。遍历这个字典，并将其中每个⼈的名字及其喜欢的地⽅打印出
+# 来。
+favorite_places = {
+	'my':['wuhan','wuhan','wuhan'],
+	'he':['caidian','caidian'],
+	'she':['jiedao']
+}
+
+# 输出分别输出名字和喜欢的地方
+for name, places in favorite_places.items():
+	print(name,end='')
+	place = ','. join(places)  # 将字符串连来一起 ",".join()
+	print(f'喜欢位置是{place}') # map(str,) 可以将数值型的转换为字符串
+
+# 练习 6.10：喜欢的数 2 修改为练习 6.2 编写的程序，让每个⼈都可以
+# 有多个喜欢的数字，然后将每个⼈的名字及其喜欢的数打印出来。
+# ***** 同上 *****
+
+# 练习 6.11：城市 创建⼀个名为 cities 的字典，将三个城市名⽤作
+# 键。对于每座城市，都创建⼀个字典，并在其中包含该城市所属的国
+# 家、⼈⼝约数以及⼀个有关该城市的事实。表⽰每座城市的字典都应
+# 包含 country、population 和 fact 等键。将每座城市的名字以及
+# 相关信息都打印出来。
+
+# 字典中带字典
+cities = {
+	'wuhan' : {'country': 'China','population':1000,'fact': 'big'},
+	'rizhao' : {'country': 'China','population':100,'fact': 'mid'},
+	'xingguo' : {'country': 'China','population':10,'fact': 'small'}
+}
+
+# 输出 城市名称 和 所处位置 人口数 事件
+for city_name, city_info in cities.items():
+	print(city_name,end='')
+	print(f'位于{city_info['country'].title()}，'
+		  f'它的人口有{city_info['population']}万人,'
+		  f'它比较{city_info['fact']}')
