@@ -63,3 +63,90 @@ user1 = User('liu','zihuan',23,'wuhan')
 
 user1.describe_user()
 user1.greet_user()
+
+##  9.4
+class Restaurant:
+	""" 模拟餐厅的具体情况 """
+	def __init__(self,restaurant_name,cuisine_type):
+		""" 初始化 类 的名称和餐饮类型"""
+		self.name = restaurant_name
+		self.cuisine_type = cuisine_type
+		self.number_served = 0
+
+	def describe_restaurant(self):
+		print(f'我们餐厅的名称是{self.name}')
+		print(f'我们餐厅有的食物有{self.cuisine_type}')
+
+	def open_restaurant(self):
+		print('餐厅正在营业')
+
+	def member_restaurant(self):
+		print(f'{self.number_served}人已经在此就餐了')
+
+	# 添加 传递函数 生成新的加入的人
+	def set_number_served(self,member):
+		self.number_served = member
+
+	# 添加 增加函数 加上新加入的人
+	def increment_number_served(self,incr_member):
+		self.number_served += incr_member
+
+
+
+restaurant = Restaurant('liuxiaohuan','hot dry noodles')
+restaurant.member_restaurant()
+
+# 修改 就餐的人
+restaurant.number_served = 3
+restaurant.member_restaurant()
+
+# set 方法 修改就餐人数
+restaurant.set_number_served(10)
+restaurant.member_restaurant()
+
+# incr 方法 修改就餐人数
+restaurant.increment_number_served(20)
+restaurant.member_restaurant()
+
+# 9.5
+class User:
+	""" 用户信息的私人定制 """
+	def __init__(self,first_name,last_name,age,home):
+		self.first = first_name
+		self.last = last_name
+		self.age = age
+		self.home = home
+		self.login_attempts = 0
+
+	def describe_user(self):
+		""" 个人信息的介绍 """
+		print(f'全名为{self.first.title()} {self.last}')
+		print(f'年龄为:{self.age}')
+		print(f'家位于：{self.home.title()}')
+
+	def greet_user(self):
+		""" 问候客户 """
+		print(f'你好，{self.first.title()} {self.last}')
+
+	# 增加 login_attempts
+	def increment_login_attempts(self):
+		self.login_attempts += 1
+
+	# 重置 login_attempts
+	def reset_login_attempts(self):
+		self.login_attempts = 0
+
+
+user2 = User('liu','xiaohuan',101,'wuhan')
+i = 0
+while i <= 4:
+	user2.increment_login_attempts()
+	print(user2.login_attempts)
+	i += 1
+
+# 重置
+user2.reset_login_attempts()
+print(user2.login_attempts)
+
+
+
