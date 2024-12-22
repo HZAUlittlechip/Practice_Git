@@ -55,10 +55,6 @@ class Ele_car(Car):
 ### 9.3.3 重写⽗类中的⽅法
 	# 可以重新定义一个和父类重名的函数来替代 或者说是重写 父类 中的 方法
 
-
-
-
-
 my_leaf = Ele_car('nissan','leaf','2024','me')
 print(my_leaf.get_descriptive_name())
 
@@ -71,5 +67,29 @@ my_leaf.describe_battery()
 
 # 如 发现 电车的中的方式太多了，不如单独分出一个类来，比如说电池的类
 # 就可以在 电车的上级再生成一个电池的类，来让电车来引用
+class Battery:
+	"""  电车电池的类 """
+	def __init__(self,battery_size = 40):
+		""" 初始化电池的容量 """
+		self.battery_size =  battery_size
+
+	def describe_battery(self):
+		print(f'电池的容量还有{self.battery_size}')
+
+# 重新编写精简版 的电动车类
+class Ele_car(Car):
+	""" 精简版电车类 """
+	def __init__(self,make,model,year):
+		super().__init__(make,model,year)
+		# 创建一个新的 Battery 实例 来在Ele_car中被应用
+		# 其也属于初始化的过程
+		self.battery = Battery()
+
+my_leaf = Ele_car('nissan','leaf',2024) # my_leaf -- self -- instance
+
+print(my_leaf.get_descriptive_name())  # 需要调用父类Car
+my_leaf.battery.describe_battery()  #  先调用battery 然后调用Battery赋予给它的函数
+
+# 9.3.5 模拟实物
 
 

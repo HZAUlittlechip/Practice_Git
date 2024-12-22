@@ -148,5 +148,124 @@ while i <= 4:
 user2.reset_login_attempts()
 print(user2.login_attempts)
 
+# 9.6
+# 继承 9.4 的类
+class IceCreamStand(Restaurant):
+	def __init__(self,restaurant_name,cuisine_type,flavors):
+		super().__init__(restaurant_name,cuisine_type)
+		self.flavors = flavors
+
+	def describe_flavors(self):
+		""" 用来描述冰淇淋的口味 """
+		print(f'我们的冰淇淋口味有',end='')
+		for flavor in self.flavors:
+			print(flavor,end=' ')
 
 
+icecream = IceCreamStand('xiaoliuyizhan','ice_cream',['blue','yellow'])
+
+icecream.describe_flavors()
+
+# 9.7
+# 调用 9.5 类
+class Admin(User):
+	""" 管理员的类 """
+	def __init__(self,first_name,last_name,age,home):
+		super().__init__(first_name,last_name,age,home)
+		self.privileges = ['can add post','can delete','can ban user']
+
+	def show_privileges(self):
+		""" 展示管理员的权限 """
+		print('管理员的权限有：')
+		for privilege in self.privileges:
+			print(privilege)
+
+admin_1 = Admin('liu', 'zihuan', 23, 'wuhan')
+
+admin_1.show_privileges()
+
+# 9.8
+class Privileges:
+	""" 管理权限的类 """
+	def __init__(self):
+		self.privileges = ['can add post', 'can delete', 'can ban user']
+
+	def show_privileges(self):
+		""" 展示管理员的权限 """
+		print('管理员的权限有：')
+		for privilege in self.privileges:
+			print(privilege)
+
+class Admin(User):
+	""" 管理员的类 """
+	def __init__(self,first_name,last_name,age,home):
+		super().__init__(first_name,last_name,age,home)
+
+		self.privileges = Privileges()
+
+admin_2 = Admin('liu', 'zihuan', 23, 'wuhan')
+
+admin_2.privileges.show_privileges()
+
+# 9.10
+import sys
+sys.path.append("C:\\Users\刘子桓\PycharmProjects\practice\Python编程：从入门到实践\\09类")
+
+from restaurant import IceCreamStand
+icecream = IceCreamStand('xiaoliuyizhan','ice_cream',['blue','yellow'])
+
+icecream.describe_flavors()
+
+# 9.11
+
+# 9.13
+from random import randint
+
+class Die:
+	""" 1 """
+	def __init__(self,sides):
+		""" 看你输入的点数是多少 """
+		self.sides = sides
+
+	def roll_die(self,times):
+		time = 0
+		while time <= times:
+			dianshu = randint(1,self.sides)
+			print(f'你骰中了{dianshu}')
+			time += 1
+
+first_chance = Die(6)
+first_chance.roll_die(10)
+
+# 9.14
+# 抽奖游戏
+from random import choice
+
+def reward(tickets_bags,your_ticket):
+	""" tickets_bags是抽奖库 """
+	reward_numbers = []
+	i = 0
+	while i < 4:
+		reward_numbers.append(choice(tickets_bags))
+		i += 1
+	print(f'大奖号码是{reward_numbers}')
+
+	# 判断元素是否全部匹配
+	# 检查 中奖号码 是否全部在 你购买的奖票内
+	# reward_numbers 循环赋予给 num , 再判断 num 是否在 your_ticket 内
+	if all(num in your_ticket for num in reward_numbers):
+		print('你中奖了')
+	else:
+		print('不好意思')
+
+# 生成所有的1-9的数字 和 英语字母小写
+import string
+numbers1_9 = list(range(1,10))
+letters = list(string.ascii_lowercase + string.ascii_uppercase)
+
+ticket_bags = numbers1_9 + letters
+
+# 判断自己是否中奖了
+my_ticket = [3,1,2,10,0,4,'L','M',"H"]
+
+reward(ticket_bags,my_ticket)
