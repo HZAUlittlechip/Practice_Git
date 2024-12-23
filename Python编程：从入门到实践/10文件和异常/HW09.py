@@ -69,5 +69,18 @@ while True:
 	print(f"两数之和是{first_number_int + second_number_int}")
 
 
-# 10.8
+# 10.8 & 10.9
+pass
+
+# 10.10
+# count() 可以看出单词在字符串中出现的次数
+from pathlib import Path
+
+path = Path('gudengbao.txt') # 未下载
+
+contents_words = path.read_text().split()
+
+print(contents_words.lower().count('then'))
+print(contents_words.lower().count('there'))
+print(contents_words.lower().count('the '))
 
