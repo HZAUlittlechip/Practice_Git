@@ -134,7 +134,6 @@ def greet_user():
 			print(f'欢迎回来，{use_info['username']},你的年龄是{use_info['age']}')
 		elif active =='n':
 			return get_new_username(path)
-
 		else:
 			print('请输入正确的形式')
 			greet_user()
